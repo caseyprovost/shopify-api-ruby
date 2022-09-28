@@ -18,7 +18,7 @@ module ShopifyAPI
             is_online: T.nilable(T::Boolean),
           ).returns(T::Hash[Symbol, T.any(String, SessionCookie)])
         end
-        def begin_auth(shop:, redirect_path:, is_online: true)
+        def begin_auth(shop:, redirect_path:, is_online: true) #
           unless Context.setup?
             raise Errors::ContextNotSetupError, "ShopifyAPI::Context not setup, please call ShopifyAPI::Context.setup"
           end
